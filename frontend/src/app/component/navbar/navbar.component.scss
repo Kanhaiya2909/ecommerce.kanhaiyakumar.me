@@ -1,0 +1,104 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar{
+    background-color: white;
+    color: rgb(28, 25, 25);
+    // box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    height: 90px;
+  
+    
+  }
+  .logo{
+    img{
+      height: 65px;
+      width: 250px;
+      margin-left: 20px;
+      cursor: pointer;
+    }
+    
+  }
+  .cart-icon{
+    margin-right: 20px;
+    cursor: pointer;
+  }
+  
+  .account-menu{
+    margin-right: 15px;
+  }
+  
+
+  @media only screen and (max-width: 480px){
+    .cart-icon{
+    margin-left: 5px;
+    margin-right: 3px;
+    }
+    .account-menu{
+      size: 5px;
+    }
+    .logo{
+      font-size: 10px;
+    }
+  }
+
+.search{
+  width: 100%;
+  text-align: center;
+ 
+}
+.search-input{
+    border-radius: 40px 0px 0px 40px;
+    width: 55%;
+    // border: 0px;
+    // box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    // border: 1px solid rgb(40, 39, 39);
+    border-bottom: 1px solid rgb(40, 39, 39);
+    border-top: 1px solid rgb(40, 39, 39);
+    border-left: 1px solid rgb(40, 39, 39);
+    border-right: 1px solid rgb(40, 39, 39);
+
+    height: 45px;
+    padding-left: 29px;
+    
+}
+.search-input:focus{
+  outline:0;
+}
+.search-button{
+  border-radius: 0px 55px 55px 0px;
+  border: 0px;
+  // box-shadow: rgba(99, 99, 99, 0.2) 0px 3px 10px 0px;
+
+  height: 45px;
+  background-color: #f1f1f1;
+  border-bottom: 1px solid rgb(40, 39, 39);
+  border-top: 1px solid rgb(40, 39, 39);
+  border-right: 1px solid rgb(40, 39, 39);
+  border-left: 0px;
+}
+
+.mat-badge-content{
+  background : transparent;
+  color: rgb(215, 65, 1);
+  right: 53px !important;
+  top: 2px !important;
+}
+
+div.mat-chip-listbox-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+
+  .mat-chip-option{
+    flex: 0 0 auto;
+    background-color: aqua;
+  }
+}
+
+  
+.sticky{
+  position: fixed;
+  top: 0px;
+  z-index: 9;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}

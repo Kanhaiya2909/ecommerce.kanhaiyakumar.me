@@ -1,0 +1,22 @@
+<div class="row">
+    <div class="col-md-8">
+        <div class="detail-section">
+            <div class="container-fluid">
+                <img class="detail-img" [src]="product.imageUrl" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <h2><b>{{ product.name }}</b></h2>
+        <h4 style="margin-top: 20px;">About this product</h4>
+        <p>{{ product.description }}</p>
+
+        <div class="price"><b>{{ product.unitPrice | currency: "INR" }}</b></div>
+        <button (click)="addToCart()" class="btn btn-primary btn-sm my-1">
+            Add to Cart
+        </button>
+        <hr />
+
+
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="center-screen">
+    <mat-card class="signup-card">
+        <h1
+            style="margin-top: 20px; margin-bottom: 30px; text-align: center; font-weight: 600; color: #1877f2;">Login</h1>
+        <form (ngSubmit)="loginUser()" [formGroup]="firstFormGroup">
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Username</mat-label>
+                <input formControlName="usernameCtrl" name="username" [(ngModel)]="loginData.username" type="text" matInput placeholder="Username" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="this.firstFormGroup.controls['usernameCtrl'].touched && this.firstFormGroup.controls['usernameCtrl'].errors">
+                    Please, enter your valid username.
+                 </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Password</mat-label>
+                <input formControlName="passwordCtrl" name="password" [(ngModel)]="loginData.password" [type]="show ? 'text' : 'password'" matInput placeholder="Password" required>
+                <mat-icon (click)="changeShow()" matSuffix>{{show ? 'visibility':'visibility_off'}}</mat-icon>
+                <mat-error *ngIf="this.firstFormGroup.controls['passwordCtrl'].touched && this.firstFormGroup.controls['passwordCtrl'].errors">
+                    Please, Enter a valid password
+                 </mat-error>
+            </mat-form-field>
+           
+            <button mat-raised-button class="form-group"
+            color="primary"
+            [disabled]="!firstFormGroup.valid"
+                style="margin-bottom: 20px; color: white; font-size: larger;"><mat-icon matPrefix>login</mat-icon>Login</button>
+        </form>
+        <span style="margin-bottom: 20px;"><a routerLink="" style="text-decoration: none; font-size: large;">Forgotten password?</a></span>
+  <hr style="margin-left: 20px; margin-right: 20px;">
+  <button mat-raised-button
+  routerLink="/sign-up"
+  style="margin-bottom: 20px; background: #42b72a; color: white; font-size: larger; margin-left: 50px; margin-right: 50px; text-align: center;"
+  >Create new account</button>
+</mat-card>
+</div>

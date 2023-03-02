@@ -1,0 +1,57 @@
+<div class="center-screen">
+    <mat-card class="signup-card">
+        <h1
+            style="margin-top: 20px; margin-bottom: 30px; text-align: center; font-weight: 600; color: #1877f2;">Sign Up</h1>
+        <form (ngSubmit)="registerUser()" [formGroup]="firstFormGroup">
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Username</mat-label>
+                <input name="username"
+                formControlName="usernameCtrl"
+                 [(ngModel)]="user.username"
+                 type="text" matInput placeholder="Username" required>
+                <mat-icon matSuffix>account_circle</mat-icon>
+                <mat-error *ngIf="this.firstFormGroup.controls['usernameCtrl'].touched && this.firstFormGroup.controls['usernameCtrl'].errors">
+                   Username must contain at least 3 characters.
+                </mat-error>
+            </mat-form-field>
+            
+            
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Password</mat-label>
+                <input name="password"
+                formControlName="passwordCtrl"
+                [(ngModel)]="user.password" [type]="show ? 'text' : 'password'" matInput placeholder="Password" required>
+                <mat-icon (click)="changeShow()" matSuffix>{{show ? 'visibility':'visibility_off'}}</mat-icon>
+                <mat-error *ngIf="this.firstFormGroup.controls['passwordCtrl'].touched && this.firstFormGroup.controls['passwordCtrl'].errors">
+                    Password must contain at least 3 characters.
+                 </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>Full Name</mat-label>
+                <input name="name"
+                formControlName="nameCtrl"
+                [(ngModel)]="user.name" type="text" matInput placeholder="Full Name" required>
+                <mat-icon matSuffix>person</mat-icon>
+                <mat-error *ngIf="this.firstFormGroup.controls['nameCtrl'].touched && this.firstFormGroup.controls['nameCtrl'].errors">
+                    Name must contain at least 3 characters.
+                 </mat-error>
+            </mat-form-field>
+            <mat-form-field appearance="outline" class="form-group">
+                <mat-label>E-Mail</mat-label>
+                <input name="email"
+                formControlName="emailCtrl"
+                [(ngModel)]="user.email" type="email" matInput placeholder="E-Mail" required>
+                <mat-icon matSuffix>mail</mat-icon>
+                <mat-error *ngIf="this.firstFormGroup.controls['emailCtrl'].touched && this.firstFormGroup.controls['emailCtrl'].errors">
+                    Please, enter valid email address.
+                 </mat-error>
+            </mat-form-field>
+            <button mat-raised-button
+            [disabled]="!firstFormGroup.valid"
+            type="submit"
+            color="primary"
+                style="margin-bottom: 50px; font-weight: 800;">Sign Up</button>
+        </form>
+        <span style="margin-bottom: 20px;"><a routerLink="login" style="text-decoration: none; color: black;">Already have account? </a> <a routerLink="/login">Login</a></span>
+    </mat-card>
+</div>

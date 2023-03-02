@@ -1,0 +1,74 @@
+<mat-toolbar>
+
+  <a class="logo" routerLink="">
+    <img src="../../../assets/images/ecommerce-logo-new.png" alt="" srcset="">
+  </a>
+
+<div class="search">
+  <form>
+    <input
+    #myInput
+   name="keyword"
+    type="search"
+    class="search-input"
+    (keyup.enter)="doSearch(myInput.value)"
+     placeholder="Search">
+    <button (click)="doSearch(myInput.value)" matTooltip="Search" class="search-button">
+      <i class="fas fa-search" style="color: rgb(40, 39, 39); width: 55px;"></i>
+    </button>
+  </form>
+</div>
+  
+
+  <span class="example-spacer"></span>
+<!-- 
+  <div
+  style="font-size: 15px; 
+  display: inline-block;
+ width: 150px;
+ white-space: nowrap;
+ overflow: hidden !important;
+ text-overflow: ellipsis;">Hello, {{!isLoggedIn ? signin :user.name | split}}</div>
+
+ <br> -->
+  <button class="btn btn-outline-dark account-menu"
+  [matMenuTriggerFor]="beforeMenu"
+  #triggerbefore="matMenuTrigger" 
+ >
+ <!-- [ngStyle]="{'display': isLoggedIn == true ? 'block':'none'}" -->
+ 
+    Account & Lists
+    <i class='fas fa-caret-down' style="margin-left: 5px;"></i>
+  </button>
+  
+  <mat-menu #beforeMenu="matMenu" xPosition="before">
+    <span class="abc">
+      <!-- (click)="yourAccount()" -->
+    <button (click)="isLoggedIn? yourAccount():navToLogin()"  mat-menu-item >Your Account
+      <mat-icon  style="color: rgb(77, 76, 75);">account_circle</mat-icon>
+    </button>
+    <button mat-menu-item>Your Order
+      <mat-icon style="color: rgb(77, 76, 75);">local_mall</mat-icon>
+    </button>
+    <button mat-menu-item>Your Wishlist
+      <mat-icon style="color: rgb(77, 76, 75);">favorite</mat-icon>
+    </button>
+    <button mat-menu-item routerLink="/login" *ngIf="!isLoggedIn">Sign In
+      <mat-icon style="color: #034591;">login</mat-icon>
+    </button>
+    <button mat-menu-item (click)="logout()" *ngIf="isLoggedIn">Sign Out
+      <mat-icon style="color: #034591;">logout</mat-icon>
+    </button>
+  </span>
+  </mat-menu>
+  <!-- <mat-icon  matBadge="1" matBadgeSize="medium" routerLink="" style="font-size:33px;" class="cart-icon">shopping_cart</mat-icon> -->
+  <!-- <i class="fa-sharp fa-regular fa-cart-shopping"></i> -->
+<span matBadge="{{tQuantity}}" matBadgeSize="medium" matBadgeColor="warn">
+  <img routerLink="/cart" src="../../../assets/images/carticon.png" style="height: 40px; width: 90px; cursor: pointer;" alt="">
+</span>
+
+  
+  <!-- <i matTooltip="Cart"  matBadge="0" matBadgeSize="medium" matBadgeColor="warn" routerLink="" class="material-icons cart-icon" style="font-size:46px;">add_shopping_cart</i> -->
+</mat-toolbar>
+
+

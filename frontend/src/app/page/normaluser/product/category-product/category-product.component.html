@@ -1,0 +1,16 @@
+<div class="container">
+    <div class="row card-group">
+        <div class="col-3"  *ngFor="let p of product">
+            <mat-card class="productCard">
+
+               <img class="productImg" [src]="p.imageUrl" alt="" srcset="">
+                <div style="height: 120px; padding: 10px;">
+                    <h2 style="text-align: center;">{{p.unitPrice | currency: 'INR'}}</h2>
+                    <h2 style="text-align: center;">{{p.name}}</h2>
+                </div>
+                <button type="button" (click)="addToCart(p)" class="btn btn-primary btncart">Add to cart</button>
+                <button type="button" routerLink="/home/products/{{p.id}}" class="btn btn-secondary btncart">View Details</button>
+            </mat-card>
+        </div>
+    </div>
+</div>

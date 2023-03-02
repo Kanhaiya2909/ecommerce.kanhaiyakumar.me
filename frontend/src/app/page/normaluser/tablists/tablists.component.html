@@ -1,0 +1,18 @@
+<!-- <mat-chip-listbox aria-label="Fish selection" style="margin-bottom: 15px; margin-left: 20px;">
+    <mat-chip-option routerLink="/home/all-products" style="width: fit-content;">All Products</mat-chip-option>
+            
+    <div *ngFor="let pc of productCategory">
+            <mat-chip-option routerLink="/home/category/{{pc.id}}" style="width: fit-content;">{{pc.categoryName}}</mat-chip-option>
+        </div>
+</mat-chip-listbox> -->
+
+   <div class="col-md-12" style="background-color: rgb(233, 238, 238);">
+    <div class="btn-group" role="group">
+        <button style="margin: 5px;" class="btn btn-secondary" routerLinkActive="active" routerLink="/home/all-products">All Product</button>
+        <div *ngFor="let pc of productCategory">
+        <button style="margin: 5px;" class="btn btn-secondary" routerLinkActive="active" routerLink="/home/category/{{pc.id}}">{{pc.categoryName}}</button>
+        <!-- <button type="button" class="btn btn-secondary">Left</button> -->
+       
+    </div>
+</div>
+   </div>

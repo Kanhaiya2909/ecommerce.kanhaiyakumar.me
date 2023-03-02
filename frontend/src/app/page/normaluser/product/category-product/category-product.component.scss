@@ -1,0 +1,24 @@
+.productCard{
+    height: 470px;
+    width: 100%;
+    margin: 8px;
+    padding: 0px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    cursor: pointer;
+}
+.productCard:hover{
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+    
+}
+.productImg{
+    width: 100%;
+    height: 250px;
+    object-fit: fill;
+}
+
+
+.btncart{
+    margin: 15px;
+    margin-bottom: 2px;
+    margin-top: 2px;
+}

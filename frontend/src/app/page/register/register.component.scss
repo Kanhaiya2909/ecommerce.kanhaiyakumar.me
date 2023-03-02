@@ -1,0 +1,22 @@
+.signup-card{
+    width: 400px;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+    
+}
+.form-group{
+   
+    width: 80%;
+}
+
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 100vh;
+  }
+  @media only screen and (max-width: 600px) {
+    .signup-card{
+        box-shadow: none;
+    }
+  }

@@ -1,0 +1,13 @@
+.scrolling-wrapper{
+	overflow-x: auto;
+    margin-left: 20px;
+    margin-right: 0px;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+
+button.active{
+       
+    background: rgb(2, 120, 218);
+ }

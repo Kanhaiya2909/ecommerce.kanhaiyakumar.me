@@ -1,0 +1,77 @@
+<nav class="navbar">
+    <h1 class="navbar-text" style="text-align: center;">
+        Securly Checkout
+    </h1>
+  </nav>
+
+
+
+<div class="container">
+    <div class="row my-5">
+            <div class="col-md-8">
+                <mat-card style="box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;">
+                    <mat-stepper #stepper  class="checkForm">
+                        <mat-step [stepControl]="firstFormGroup" errorMessage="All field is required">
+                          <form [formGroup]="firstFormGroup" style="display: inline-block;">
+                            <ng-template matStepLabel>Fill out your details</ng-template>
+                            <mat-form-field class="details-field" appearance="fill">
+                              <mat-label>Name</mat-label>
+                              <input matInput placeholder="Last name, First name" formControlName="nameCtrl" required>
+                            </mat-form-field>
+                            <mat-form-field class="details-field" appearance="fill">
+                                <mat-label>E-mail</mat-label>
+                                <input matInput placeholder="E-Mail Address" formControlName="emailCtrl" required>
+                              </mat-form-field>
+                                
+                            <div>
+                              <button [disabled]="firstFormGroup.invalid" mat-raised-button color="primary" matStepperNext>Next</button>
+                            </div>
+                          </form>
+                        </mat-step>
+                        <mat-step [stepControl]="secondFormGroup" errorMessage="Address is required.">
+                          <form [formGroup]="secondFormGroup">
+                            <ng-template matStepLabel>Fill out your address</ng-template>
+                            <mat-form-field class="details-field" appearance="fill">
+                                <mat-label>Address</mat-label>
+                                <input matInput placeholder="Address" formControlName="addCtrl" required>
+                              </mat-form-field>
+                              <mat-form-field class="details-field" appearance="fill">
+                                <mat-label>State</mat-label>
+                                <input matInput placeholder="State" formControlName="stateCtrl" required>
+                              </mat-form-field>
+                              <mat-form-field class="details-pin" appearance="fill">
+                                <mat-label>Pin code</mat-label>
+                                <input matInput placeholder="6 digit pin code" formControlName="pinCtrl" required>
+                              </mat-form-field>
+                            <div>
+                              <button mat-button matStepperPrevious>Back</button>
+                              <button [disabled]="secondFormGroup.invalid"  mat-raised-button color="primary" matStepperNext>Next</button>
+                            </div>
+                          </form>
+                        </mat-step>
+                        <!-- [disabled]="contactForm.invalid" -->
+                        <mat-step>
+                          <ng-template  matStepLabel>Payment</ng-template>
+                          <p style="motion: 10px; color: green; text-align: center;">Securly make payment</p>
+                          <div>
+                            <button mat-raised-button matStepperPrevious>Back</button>
+                            <button [disabled]="firstFormGroup.invalid" [disabled]="secondFormGroup.invalid" mat-raised-button color="primary" style=" margin: 10px;" >Make Payment</button>
+                          </div>
+                        </mat-step>
+                      </mat-stepper>
+                      
+                </mat-card>
+            </div> 
+            <div class="col-md-3">
+                <mat-card style="box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;">
+                    <h2 style="text-align: center; padding-top: 20px;" ><b>Order Summary</b></h2>
+                    <h2 style="margin-left: 10px;">Total Items : {{totalQuantity}}</h2>
+                    <h2 style="margin-left: 10px; color: green;">Delivery : Free Delivery</h2>
+                    <hr>
+                    <h2 style="margin-left: 10px; color: rgb(177, 1, 1); font-weight: 500;">Total Cost :{{totalCost | currency:'INR'}}</h2>
+                </mat-card>
+            </div>
+           
+       
+    </div>
+</div>
